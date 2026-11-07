@@ -1,0 +1,59 @@
+The lab — one official package, one fictional application,
+nobody else's network
+====================================================================
+
+The lab is Fluent Bit as its project ships it: the official
+Ubuntu package fluent-bit_5.1.5_amd64.deb (63186770 bytes,
+md5 edf3825bcdd1e8dd9952682f47647507) from
+packages.fluentbit.io/ubuntu/noble/, extracted with dpkg-deb -x
+into scratch and run from the extracted
+opt/fluent-bit/bin/fluent-bit. Nothing was installed
+system-wide. The .deb and the extraction folder were kept out
+of the checkout to keep it small; the transcripts name the
+version and the chapters name the exact package.
+
+  * The fixtures (fixtures/): an invented ticket-desk
+    application. app.log — ten JSON lines (INFO x4, DEBUG x3,
+    ERROR x3). app-plain.log — five plain-text lines, one of
+    them deliberately malformed. stacktrace.log — three
+    events in eight lines, one carrying a Java-style stack
+    trace. http-payload.json — one record to POST.
+
+  * The configurations (configs/): parsers.conf (a JSON
+    parser, a regex parser, one multiline parser) and one
+    classic-format config per test, t01 to t09, plus the YAML
+    twin of the first pipeline (t01-dummy.yaml). Configs run
+    from the configs/ folder, so their relative paths
+    (../fixtures, ../outputs) resolve inside the lab.
+
+  * Ports: the HTTP input bound 127.0.0.1:18084; the built-in
+    monitoring server bound 127.0.0.1:19084 (assigned port
+    +1000). The retry tests pointed an HTTP output at
+    127.0.0.1:19084 at times when nothing was listening there
+    — a deliberately dead endpoint, verified free with ss
+    before the run.
+
+  * Drivers (drivers/): run-t06-http.sh (starts the HTTP
+    pipeline, POSTs, reads the monitoring endpoints, stops
+    the server) and run-t08b-fs-buffer.sh (lists the storage
+    folder while retries are pending). The other tests were
+    run directly under a bounded `timeout`, and the shutdown
+    noise timeout produces (a SIGCONT/SIGTERM dump in the
+    transcripts) is Fluent Bit's own shutdown report, left
+    in the record.
+
+  * Outputs (outputs/): the file outputs the chapters quote —
+    t02-parsed.log (10), t03-filtered.log (7), t06-http.log
+    (1), t07-web.log (2), t07-worker.log (3). The tail DB
+    files and the fsbuffer folder are runtime state and were
+    removed after the runs.
+
+Findings the build did not expect, kept in the guide:
+5.1.5's tail starts existing files at their end (the first
+two lab runs delivered 0 records until Read_From_Head was
+found in `fluent-bit -i tail -h`); the tail input's default
+record key is `log`, not `message`; `storage.type` belongs
+on inputs, not outputs; `Multiline On` without a first-line
+parser is a startup error on this version; and
+/api/v1/health answers 404 while /api/v1/metrics and
+/api/v1/uptime answer normally.

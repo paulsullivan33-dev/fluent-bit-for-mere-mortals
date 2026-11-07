@@ -1,0 +1,8 @@
+2026-11-07 09:20:01 INFO ticket-desk starting export job 301
+2026-11-07 09:20:02 ERROR ticket-desk export job 301 failed
+java.lang.IllegalStateException: export buffer full
+    at com.example.ticketdesk.ExportJob.run(ExportJob.java:142)
+    at com.example.ticketdesk.Worker.main(Worker.java:58)
+Caused by: java.io.IOException: disk quota exceeded
+    at com.example.ticketdesk.Store.write(Store.java:87)
+2026-11-07 09:20:03 INFO ticket-desk export job 302 started

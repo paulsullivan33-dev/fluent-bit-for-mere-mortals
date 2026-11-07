@@ -1,0 +1,64 @@
+Fluent Bit v5.1.5
+* Copyright (C) 2015-2026 The Fluent Bit Authors
+* Fluent Bit is a CNCF graduated project under the Fluent organization
+* https://fluentbit.io
+
+______ _                  _    ______ _ _           _____  __  
+|  ___| |                | |   | ___ (_) |         |  ___|/  | 
+| |_  | |_   _  ___ _ __ | |_  | |_/ /_| |_  __   _|___ \ `| | 
+|  _| | | | | |/ _ \ '_ \| __| | ___ \ | __| \ \ / /   \ \ | | 
+| |   | | |_| |  __/ | | | |_  | |_/ / | |_   \ V //\__/ /_| |_
+\_|   |_|\__,_|\___|_| |_|\__| \____/|_|\__|   \_/ \____(_)___/
+
+
+[2026/11/07 21:51:53.920] [ info] [fluent bit] version=5.1.5, commit=, pid=171668
+[2026/11/07 21:51:53.920] [ info] [storage] ver=1.5.4, type=memory, sync=normal, checksum=off, max_chunks_up=128
+[2026/11/07 21:51:53.920] [ info] [simd    ] SSE2
+[2026/11/07 21:51:53.920] [ info] [cmetrics] version=2.2.5
+[2026/11/07 21:51:53.920] [ info] [ctraces ] version=0.7.3
+[2026/11/07 21:51:53.921] [ info] [input:tail:tail.0] initializing
+[2026/11/07 21:51:53.921] [ info] [input:tail:tail.0] storage_strategy='memory' (memory only)
+[2026/11/07 21:51:54.348] [ info] [input:tail:tail.0] db: delete unmonitored stale inodes from the database: count=0
+[2026/11/07 21:51:54.349] [ info] [sp] stream processor started
+[2026/11/07 21:51:54.349] [ info] [engine] Shutdown Grace Period=5, Shutdown Input Grace Period=2
+[2026/11/07 21:51:54.349] [ info] [output:file:file.0] worker #0 started
+[2026/11/07 21:52:00] [engine] caught signal (SIGCONT)
+[2026/11/07 21:52:00] Fluent Bit Dump
+
+===== Input =====
+tail.0 (tail)
+│
+├─ status
+│  └─ overlimit     : no
+│     ├─ mem size   : 0b (0 bytes)
+│     └─ mem limit  : 0b (0 bytes)
+│
+├─ tasks
+│  ├─ total tasks   : 0
+│  ├─ new           : 0
+│  ├─ running       : 0
+│  └─ size          : 0b (0 bytes)
+│
+└─ chunks
+   └─ total chunks  : 0
+      ├─ up chunks  : 0
+      ├─ down chunks: 0
+      └─ busy chunks: 0
+         ├─ size    : 0b (0 bytes)
+         └─ size err: 0
+
+
+===== Storage Layer =====
+total chunks     : 0
+├─ mem chunks    : 0
+└─ fs chunks     : 0
+   ├─ up         : 0
+   └─ down       : 0
+[2026/11/07 21:52:00] [engine] caught signal (SIGTERM)
+[2026/11/07 21:52:00.824] [ warn] [engine] service will shutdown in max 5 seconds
+[2026/11/07 21:52:00.824] [ info] [engine] pausing all inputs..
+[2026/11/07 21:52:00.824] [ info] [input] pausing tail.0
+[2026/11/07 21:52:01.418] [ info] [engine] service has stopped (0 pending tasks)
+[2026/11/07 21:52:01.421] [ info] [input] pausing tail.0
+[2026/11/07 21:52:01.421] [ info] [output:file:file.0] thread worker #0 stopping...
+[2026/11/07 21:52:01.421] [ info] [output:file:file.0] thread worker #0 stopped

@@ -1,0 +1,9 @@
+== t07-web.log ==
+app.web: [1794088442.395286795, {"message":"web request","tier":"web"}]
+app.web: [1794088443.395317123, {"message":"web request","tier":"web"}]
+count: 2
+== t07-worker.log ==
+app.worker: [1794088442.395401517, {"message":"background job","tier":"worker"}]
+app.worker: [1794088443.395379937, {"message":"background job","tier":"worker"}]
+app.worker: [1794088444.395312478, {"message":"background job","tier":"worker"}]
+count: 3

@@ -1,0 +1,31 @@
+Fluent Bit v5.1.5
+* Copyright (C) 2015-2026 The Fluent Bit Authors
+* Fluent Bit is a CNCF graduated project under the Fluent organization
+* https://fluentbit.io
+
+______ _                  _    ______ _ _           _____  __  
+|  ___| |                | |   | ___ (_) |         |  ___|/  | 
+| |_  | |_   _  ___ _ __ | |_  | |_/ /_| |_  __   _|___ \ `| | 
+|  _| | | | | |/ _ \ '_ \| __| | ___ \ | __| \ \ / /   \ \ | | 
+| |   | | |_| |  __/ | | | |_  | |_/ / | |_   \ V //\__/ /_| |_
+\_|   |_|\__,_|\___|_| |_|\__| \____/|_|\__|   \_/ \____(_)___/
+
+
+[2026/11/07 21:58:44.078] [ info] [fluent bit] version=5.1.5, commit=, pid=174124
+[2026/11/07 21:58:44.085] [ info] [storage] created root path ../outputs/fsbuffer
+[2026/11/07 21:58:44.086] [ info] [storage] ver=1.5.4, type=memory+filesystem, sync=normal, checksum=off, max_chunks_up=128
+[2026/11/07 21:58:44.086] [ info] [storage] backlog input plugin: storage_backlog.1
+[2026/11/07 21:58:44.086] [ info] [simd    ] SSE2
+[2026/11/07 21:58:44.086] [ info] [cmetrics] version=2.2.5
+[2026/11/07 21:58:44.086] [ info] [ctraces ] version=0.7.3
+[2026/11/07 21:58:44.089] [ info] [input:dummy:dummy.0] initializing
+[2026/11/07 21:58:44.089] [ info] [input:dummy:dummy.0] storage_strategy='filesystem' (memory + filesystem)
+[2026/11/07 21:58:44.093] [ info] [input:storage_backlog:storage_backlog.1] initializing
+[2026/11/07 21:58:44.093] [ info] [input:storage_backlog:storage_backlog.1] storage_strategy='memory' (memory only)
+[2026/11/07 21:58:44.093] [ info] [input:storage_backlog:storage_backlog.1] queue memory limit: 95.4M
+[2026/11/07 21:58:44.093] [error] [config] http: unknown configuration property 'storage.type'. The following properties are allowed: proxy, allow_duplicated_headers, log_response_payload, http.response_timeout, http.read_idle_timeout, http_user, http_passwd, oauth2.enable, oauth2.token_url, oauth2.client_id, oauth2.client_secret, oauth2.user_agent, oauth2.scope, oauth2.audience, oauth2.resource, oauth2.auth_method, oauth2.jwt_key_file, oauth2.jwt_cert_file, oauth2.jwt_aud, oauth2.jwt_header, oauth2.jwt_ttl_seconds, oauth2.refresh_skew_seconds, oauth2.timeout, oauth2.connect_timeout, aws_auth, aws_service, aws_region, aws_sts_endpoint, aws_role_arn, aws_external_id, aws_profile, header_tag, format, json_date_format, json_date_key, compress, header, uri, http_method, gelf_timestamp_key, gelf_host_key, gelf_short_message_key, gelf_full_message_key, gelf_level_key, body_key, and headers_key.
+[2026/11/07 21:58:44.093] [ help] try the command: /home/hatch/workspace/.batch-351-363/scratch-fluent-bit/extracted/opt/fluent-bit/bin/fluent-bit -o http -h
+
+[2026/11/07 21:58:44.093] [error] [engine] output initialization failed
+[2026/11/07 21:58:45.093] [ info] [input] pausing dummy.0
+[2026/11/07 21:58:45.093] [ info] [input] pausing storage_backlog.1

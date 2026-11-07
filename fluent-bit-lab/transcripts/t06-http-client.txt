@@ -1,0 +1,26 @@
+$ curl -s http://127.0.0.1:19084/api/v1/metrics
+{"input":{"http.0":{"records":0,"bytes":0}},"filter":{},"output":{"file.0":{"proc_records":0,"proc_bytes":0,"errors":0,"retries":0,"retries_failed":0,"dropped_records":0,"retried_records":0}}}
+$ curl -s -i http://127.0.0.1:19084/api/v1/health   (checked: 404 in v5.1.5)
+HTTP/1.1 404
+server: Fluent Bit
+x-http-engine: Monkey heritage
+content-length: 0
+
+
+$ curl -s -X POST http://127.0.0.1:18084/ -H "Content-Type: application/json" -d @payload
+{"level":"INFO","message":"ticket created over http","service":"ticket-desk","ticket":401}
+HTTP/1.1 201 Created
+server: Fluent Bit
+x-http-engine: Monkey heritage
+content-length: 0
+
+
+$ cat ../outputs/t06-http.log
+http.test: [1794088669.762691924, {"level":"INFO","message":"ticket created over http","service":"ticket-desk","ticket":401}]
+$ curl -s http://127.0.0.1:19084/api/v1/uptime
+{"uptime_sec":5,"uptime_hr":"Fluent Bit has been running:  0 day, 0 hour, 0 minute and 5 seconds"}
+$ curl -s http://127.0.0.1:19084/api/v1/metrics/prometheus | head -4
+# HELP fluentbit_input_bytes_total Number of input bytes.
+# TYPE fluentbit_input_bytes_total counter
+fluentbit_input_bytes_total{name="http.0"} 92 1794088671782
+# HELP fluentbit_input_records_total Number of input records.

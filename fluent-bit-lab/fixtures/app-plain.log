@@ -1,0 +1,5 @@
+2026-11-07 09:10:01 INFO ticket-desk ticket=201 user login succeeded
+2026-11-07 09:10:02 WARN ticket-desk ticket=202 queue depth rising
+2026-11-07 09:10:03 ERROR ticket-desk ticket=203 export failed
+this line does not match the expected pattern at all
+2026-11-07 09:10:05 INFO ticket-desk ticket=204 report generated

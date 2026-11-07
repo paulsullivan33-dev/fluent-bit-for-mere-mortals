@@ -1,0 +1,10 @@
+{"ts":"2026-11-07T09:00:01Z","level":"INFO","service":"ticket-desk","ticket":101,"message":"ticket created"}
+{"ts":"2026-11-07T09:00:02Z","level":"DEBUG","service":"ticket-desk","ticket":101,"message":"cache lookup for ticket"}
+{"ts":"2026-11-07T09:00:03Z","level":"INFO","service":"ticket-desk","ticket":102,"message":"ticket assigned"}
+{"ts":"2026-11-07T09:00:04Z","level":"ERROR","service":"ticket-desk","ticket":103,"message":"payment gateway timeout"}
+{"ts":"2026-11-07T09:00:05Z","level":"DEBUG","service":"ticket-desk","ticket":102,"message":"rendering ticket view"}
+{"ts":"2026-11-07T09:00:06Z","level":"INFO","service":"ticket-desk","ticket":103,"message":"ticket updated"}
+{"ts":"2026-11-07T09:00:07Z","level":"ERROR","service":"ticket-desk","ticket":104,"message":"database connection failed"}
+{"ts":"2026-11-07T09:00:08Z","level":"DEBUG","service":"ticket-desk","ticket":104,"message":"retry scheduled in memory"}
+{"ts":"2026-11-07T09:00:09Z","level":"INFO","service":"ticket-desk","ticket":105,"message":"ticket closed"}
+{"ts":"2026-11-07T09:00:10Z","level":"ERROR","service":"ticket-desk","ticket":105,"message":"webhook delivery failed"}

@@ -1,0 +1,30 @@
+site_name: Fluent Bit for Mere Mortals
+site_description: Collect log lines where they are written, parse and shape them as they flow past, and forward them onward. Pipelines, parsers, filters, routing by tag, buffering and retries, and an honest account of what a forwarder does not store or answer.
+site_url: https://paulsullivan33-dev.github.io/fluent-bit-for-mere-mortals/
+copyright: 'Part of <a href="https://paulsullivan33-dev.github.io/mere-mortals/">For Mere Mortals</a> · Text <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code MIT'
+
+# Guides live at the repo root (nice for GitHub browsing).
+# The deploy workflow copies them into docs/ before building.
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - What Fluent Bit Is: what-fluent-bit-is.md
+  - The Moving Parts: the-moving-parts.md
+  - Installing Fluent Bit: installing-fluent-bit.md
+  - Your First Pipeline: your-first-pipeline.md
+  - Reading Real Logs: reading-real-logs.md
+  - Parsers: parsers.md
+  - Filtering and Shaping: filtering-and-shaping.md
+  - Multiline Records: multiline-records.md
+  - HTTP In and Monitoring: http-in-and-monitoring.md
+  - Routing with Tags: routing-with-tags.md
+  - Outputs in the Large: outputs-in-the-large.md
+  - Buffering and Retries: buffering-and-retries.md
+  - Real Jobs: real-jobs.md
+  - The Neighbours: the-neighbours.md
+  - Limits: limits.md
+  - Troubleshooting: troubleshooting.md
+  - Glossary: glossary.md
+  - Writing Criteria: criteria.md

@@ -1,0 +1,7 @@
+t01 classic dummy->stdout: 5 records (Samples 5)
+t01b yaml dummy->stdout: 3 records (samples 3)
+t02 tail+JSON parse, no filter: 10 records
+t03 +modify+grep Exclude DEBUG: 7 records
+t04 regex parse: 4 parsed + 1 unparsed passthrough of 5 lines
+t05 multiline: 8 lines -> 3 records
+t07 routing: web 2, worker 3

@@ -1,0 +1,7 @@
+$ find ../outputs/fsbuffer -type f (while Fluent Bit is running, endpoint down)
+/home/hatch/workspace/fluent-bit-for-mere-mortals/fluent-bit-lab/outputs/fsbuffer/dummy.0/172939-1794088526.395434540.flb
+/home/hatch/workspace/fluent-bit-for-mere-mortals/fluent-bit-lab/outputs/fsbuffer/dummy.0/172939-1794088527.395351488.flb
+
+$ ls -l of the chunk files
+-rw------- 1 root root 4096 Nov  7 21:55 /home/hatch/workspace/fluent-bit-for-mere-mortals/fluent-bit-lab/outputs/fsbuffer/dummy.0/172939-1794088526.395434540.flb
+-rw------- 1 root root 4096 Nov  7 21:55 /home/hatch/workspace/fluent-bit-for-mere-mortals/fluent-bit-lab/outputs/fsbuffer/dummy.0/172939-1794088527.395351488.flb

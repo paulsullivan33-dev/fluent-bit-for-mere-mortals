@@ -1,0 +1,61 @@
+fluent-bit — the distilled commands
+====================================================================
+Every command below is one the lab ran
+(transcripts in fluent-bit-lab/transcripts/)
+or names as documented-only in the guide.
+The lab binary was the extracted package's
+/opt/fluent-bit/bin/fluent-bit; a normal
+install puts fluent-bit at that path.
+
+VERSION AND HELP (chapter 3)
+--------------------------------------------------------------------
+  fluent-bit --version             # Fluent Bit v5.1.5
+  fluent-bit --help                # options + plugin lists
+  fluent-bit -i tail -h            # one input's properties
+  fluent-bit -F parser -h          # one filter's properties
+  fluent-bit -o http -h            # one output's properties
+  fluent-bit --dry-run -c <conf>   # "configuration test is
+                                   # successful", or the error
+
+FIRST PIPELINE (chapter 4)
+--------------------------------------------------------------------
+  fluent-bit -c t01-dummy.conf     # dummy (Samples 5) -> stdout
+                                   # exactly 5 records out
+  fluent-bit -c t01-dummy.yaml     # the same pipeline in YAML
+                                   # (samples 3 -> exactly 3)
+
+REAL PIPELINES (chapters 5-8; run from fluent-bit-lab/configs/)
+--------------------------------------------------------------------
+  fluent-bit -c t02-tail-parse.conf
+                                   # tail app.log + JSON parser
+                                   # -> 10 parsed records (file)
+  fluent-bit -c t03-filtered.conf  # + modify + grep Exclude
+                                   # DEBUG -> 7 records (file)
+  fluent-bit -c t04-regex-parse.conf
+                                   # regex parser on plain text
+                                   # 4 parsed, 1 passed unparsed
+  fluent-bit -c t05-multiline.conf # multiline parser: 8 lines
+                                   # -> 3 records
+
+HTTP AND ROUTING (chapters 9-10)
+--------------------------------------------------------------------
+  sh ../drivers/run-t06-http.sh    # HTTP input on 127.0.0.1:18084
+                                   # curl POST -> 201, record in
+                                   # the file output; monitoring
+                                   # on 127.0.0.1:19084
+  curl -s http://127.0.0.1:19084/api/v1/metrics
+  curl -s http://127.0.0.1:19084/api/v1/uptime
+  fluent-bit -c t07-routing.conf   # tags app.web / app.worker
+                                   # -> two files, counts 2 / 3
+
+FAILURE, ON PURPOSE (chapters 12 and 16)
+--------------------------------------------------------------------
+  fluent-bit -c t08-retry.conf     # http output to a dead port
+                                   # retries grow, then chunks
+                                   # "cannot be retried" (dropped)
+  sh ../drivers/run-t08b-fs-buffer.sh
+                                   # filesystem buffering: .flb
+                                   # chunk files listed mid-outage
+  fluent-bit -c t09-broken.conf    # names a plugin that does
+                                   # not exist: startup error,
+                                   # exit code 1

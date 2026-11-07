@@ -1,0 +1,35 @@
+Fluent Bit v5.1.5
+* Copyright (C) 2015-2026 The Fluent Bit Authors
+* Fluent Bit is a CNCF graduated project under the Fluent organization
+* https://fluentbit.io
+
+______ _                  _    ______ _ _           _____  __  
+|  ___| |                | |   | ___ (_) |         |  ___|/  | 
+| |_  | |_   _  ___ _ __ | |_  | |_/ /_| |_  __   _|___ \ `| | 
+|  _| | | | | |/ _ \ '_ \| __| | ___ \ | __| \ \ / /   \ \ | | 
+| |   | | |_| |  __/ | | | |_  | |_/ / | |_   \ V //\__/ /_| |_
+\_|   |_|\__,_|\___|_| |_|\__| \____/|_|\__|   \_/ \____(_)___/
+
+
+[2026/11/07 21:50:15.249] [ info] [fluent bit] version=5.1.5, commit=, pid=169965
+[2026/11/07 21:50:15.249] [ info] [storage] ver=1.5.4, type=memory, sync=normal, checksum=off, max_chunks_up=128
+[2026/11/07 21:50:15.249] [ info] [simd    ] SSE2
+[2026/11/07 21:50:15.249] [ info] [cmetrics] version=2.2.5
+[2026/11/07 21:50:15.249] [ info] [ctraces ] version=0.7.3
+[2026/11/07 21:50:15.249] [ info] [input:dummy:dummy.0] initializing
+[2026/11/07 21:50:15.249] [ info] [input:dummy:dummy.0] storage_strategy='memory' (memory only)
+[2026/11/07 21:50:15.250] [ info] [sp] stream processor started
+[2026/11/07 21:50:15.250] [ info] [engine] Shutdown Grace Period=5, Shutdown Input Grace Period=2
+[2026/11/07 21:50:15.250] [ info] [output:stdout:stdout.0] worker #0 started
+[0] test.dummy: [[1794088215.418302665, {}], {"message"=>"hello from dummy yaml", "service"=>"ticket-desk"}]
+[0] test.dummy: [[1794088216.421232732, {}], {"message"=>"hello from dummy yaml", "service"=>"ticket-desk"}]
+[0] test.dummy: [[1794088217.418281948, {}], {"message"=>"hello from dummy yaml", "service"=>"ticket-desk"}]
+[2026/11/07 21:50:23] [engine] caught signal (SIGTERM)
+[2026/11/07 21:50:23] [engine] caught signal (SIGCONT)
+[2026/11/07 21:50:23.226] [ warn] [engine] service will shutdown in max 5 seconds
+[2026/11/07 21:50:23.226] [ info] [engine] pausing all inputs..
+[2026/11/07 21:50:23.226] [ info] [input] pausing dummy.0
+[2026/11/07 21:50:23.418] [ info] [engine] service has stopped (0 pending tasks)
+[2026/11/07 21:50:23.418] [ info] [input] pausing dummy.0
+[2026/11/07 21:50:23.421] [ info] [output:stdout:stdout.0] thread worker #0 stopping...
+[2026/11/07 21:50:23.421] [ info] [output:stdout:stdout.0] thread worker #0 stopped

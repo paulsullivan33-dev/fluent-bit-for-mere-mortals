@@ -1,0 +1,16 @@
+service:
+  flush: 1
+  log_level: info
+  parsers_file: parsers.conf
+
+pipeline:
+  inputs:
+    - name: dummy
+      tag: test.dummy
+      dummy: '{"message":"hello from dummy yaml","service":"ticket-desk"}'
+      rate: 1
+      samples: 3
+
+  outputs:
+    - name: stdout
+      match: test.dummy

@@ -1,0 +1,69 @@
+Fluent Bit v5.1.5
+* Copyright (C) 2015-2026 The Fluent Bit Authors
+* Fluent Bit is a CNCF graduated project under the Fluent organization
+* https://fluentbit.io
+
+______ _                  _    ______ _ _           _____  __  
+|  ___| |                | |   | ___ (_) |         |  ___|/  | 
+| |_  | |_   _  ___ _ __ | |_  | |_/ /_| |_  __   _|___ \ `| | 
+|  _| | | | | |/ _ \ '_ \| __| | ___ \ | __| \ \ / /   \ \ | | 
+| |   | | |_| |  __/ | | | |_  | |_/ / | |_   \ V //\__/ /_| |_
+\_|   |_|\__,_|\___|_| |_|\__| \____/|_|\__|   \_/ \____(_)___/
+
+
+[2026/11/07 21:49:54.590] [ info] [fluent bit] version=5.1.5, commit=, pid=169646
+[2026/11/07 21:49:54.590] [ info] [storage] ver=1.5.4, type=memory, sync=normal, checksum=off, max_chunks_up=128
+[2026/11/07 21:49:54.590] [ info] [simd    ] SSE2
+[2026/11/07 21:49:54.590] [ info] [cmetrics] version=2.2.5
+[2026/11/07 21:49:54.590] [ info] [ctraces ] version=0.7.3
+[2026/11/07 21:49:54.590] [ info] [input:dummy:dummy.0] initializing
+[2026/11/07 21:49:54.590] [ info] [input:dummy:dummy.0] storage_strategy='memory' (memory only)
+[2026/11/07 21:49:54.590] [ info] [sp] stream processor started
+[2026/11/07 21:49:54.590] [ info] [engine] Shutdown Grace Period=5, Shutdown Input Grace Period=2
+[2026/11/07 21:49:54.590] [ info] [output:stdout:stdout.0] worker #0 started
+[0] test.dummy: [[1794088195.418315688, {}], {"message"=>"hello from dummy", "service"=>"ticket-desk"}]
+[0] test.dummy: [[1794088196.418285585, {}], {"message"=>"hello from dummy", "service"=>"ticket-desk"}]
+[0] test.dummy: [[1794088197.418265728, {}], {"message"=>"hello from dummy", "service"=>"ticket-desk"}]
+[0] test.dummy: [[1794088198.424675204, {}], {"message"=>"hello from dummy", "service"=>"ticket-desk"}]
+[0] test.dummy: [[1794088199.421236989, {}], {"message"=>"hello from dummy", "service"=>"ticket-desk"}]
+[2026/11/07 21:50:06] [engine] caught signal (SIGCONT)
+[2026/11/07 21:50:06] Fluent Bit Dump
+
+===== Input =====
+dummy.0 (dummy)
+│
+├─ status
+│  └─ overlimit     : no
+│     ├─ mem size   : 0b (0 bytes)
+│     └─ mem limit  : 0b (0 bytes)
+│
+├─ tasks
+│  ├─ total tasks   : 0
+│  ├─ new           : 0
+│  ├─ running       : 0
+│  └─ size          : 0b (0 bytes)
+│
+└─ chunks
+   └─ total chunks  : 0
+      ├─ up chunks  : 0
+      ├─ down chunks: 0
+      └─ busy chunks: 0
+         ├─ size    : 0b (0 bytes)
+         └─ size err: 0
+
+
+===== Storage Layer =====
+total chunks     : 0
+├─ mem chunks    : 0
+└─ fs chunks     : 0
+   ├─ up         : 0
+   └─ down       : 0
+[2026/11/07 21:50:06] [engine] caught signal (SIGCONT)
+[2026/11/07 21:50:06] [engine] caught signal (SIGTERM)
+[2026/11/07 21:50:06.628] [ warn] [engine] service will shutdown in max 5 seconds
+[2026/11/07 21:50:06.628] [ info] [engine] pausing all inputs..
+[2026/11/07 21:50:06.628] [ info] [input] pausing dummy.0
+[2026/11/07 21:50:07.418] [ info] [engine] service has stopped (0 pending tasks)
+[2026/11/07 21:50:07.418] [ info] [input] pausing dummy.0
+[2026/11/07 21:50:07.424] [ info] [output:stdout:stdout.0] thread worker #0 stopping...
+[2026/11/07 21:50:07.424] [ info] [output:stdout:stdout.0] thread worker #0 stopped

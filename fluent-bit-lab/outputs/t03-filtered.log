@@ -1,0 +1,7 @@
+app.json: [1794042001.000000000, {"level":"INFO","service":"ticket-desk","ticket":101,"event":"ticket created","pipeline":"fluent-bit-lab"}]
+app.json: [1794042003.000000000, {"level":"INFO","service":"ticket-desk","ticket":102,"event":"ticket assigned","pipeline":"fluent-bit-lab"}]
+app.json: [1794042004.000000000, {"level":"ERROR","service":"ticket-desk","ticket":103,"event":"payment gateway timeout","pipeline":"fluent-bit-lab"}]
+app.json: [1794042006.000000000, {"level":"INFO","service":"ticket-desk","ticket":103,"event":"ticket updated","pipeline":"fluent-bit-lab"}]
+app.json: [1794042007.000000000, {"level":"ERROR","service":"ticket-desk","ticket":104,"event":"database connection failed","pipeline":"fluent-bit-lab"}]
+app.json: [1794042009.000000000, {"level":"INFO","service":"ticket-desk","ticket":105,"event":"ticket closed","pipeline":"fluent-bit-lab"}]
+app.json: [1794042010.000000000, {"level":"ERROR","service":"ticket-desk","ticket":105,"event":"webhook delivery failed","pipeline":"fluent-bit-lab"}]

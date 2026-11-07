@@ -1,0 +1,85 @@
+Fluent Bit v5.1.5
+* Copyright (C) 2015-2026 The Fluent Bit Authors
+* Fluent Bit is a CNCF graduated project under the Fluent organization
+* https://fluentbit.io
+
+______ _                  _    ______ _ _           _____  __  
+|  ___| |                | |   | ___ (_) |         |  ___|/  | 
+| |_  | |_   _  ___ _ __ | |_  | |_/ /_| |_  __   _|___ \ `| | 
+|  _| | | | | |/ _ \ '_ \| __| | ___ \ | __| \ \ / /   \ \ | | 
+| |   | | |_| |  __/ | | | |_  | |_/ / | |_   \ V //\__/ /_| |_
+\_|   |_|\__,_|\___|_| |_|\__| \____/|_|\__|   \_/ \____(_)___/
+
+
+[2026/11/07 21:54:14.667] [ info] [fluent bit] version=5.1.5, commit=, pid=172629
+[2026/11/07 21:54:14.667] [ info] [storage] ver=1.5.4, type=memory, sync=normal, checksum=off, max_chunks_up=128
+[2026/11/07 21:54:14.667] [ info] [simd    ] SSE2
+[2026/11/07 21:54:14.667] [ info] [cmetrics] version=2.2.5
+[2026/11/07 21:54:14.667] [ info] [ctraces ] version=0.7.3
+[2026/11/07 21:54:14.667] [ info] [input:dummy:dummy.0] initializing
+[2026/11/07 21:54:14.667] [ info] [input:dummy:dummy.0] storage_strategy='memory' (memory only)
+[2026/11/07 21:54:14.667] [ info] [sp] stream processor started
+[2026/11/07 21:54:14.667] [ info] [engine] Shutdown Grace Period=5, Shutdown Input Grace Period=2
+[2026/11/07 21:54:14.667] [ info] [output:http:http.0] worker #0 started
+[2026/11/07 21:54:14.667] [ info] [output:http:http.0] worker #1 started
+[2026/11/07 21:54:16.398] [error] [output:http:http.0] no upstream connections available to 127.0.0.1:19084
+[2026/11/07 21:54:16.398] [ warn] [engine] failed to flush chunk '172629-1794088455.395362619.flb', retry in 7 seconds: task_id=0, input=dummy.0 > output=http.0 (out_id=0)
+[2026/11/07 21:54:17.395] [error] [output:http:http.0] no upstream connections available to 127.0.0.1:19084
+[2026/11/07 21:54:17.395] [ warn] [engine] failed to flush chunk '172629-1794088456.395317223.flb', retry in 11 seconds: task_id=1, input=dummy.0 > output=http.0 (out_id=0)
+[2026/11/07 21:54:23.395] [error] [output:http:http.0] no upstream connections available to 127.0.0.1:19084
+[2026/11/07 21:54:23.395] [ warn] [engine] failed to flush chunk '172629-1794088455.395362619.flb', retry in 15 seconds: task_id=0, input=dummy.0 > output=http.0 (out_id=0)
+[2026/11/07 21:54:28.395] [error] [output:http:http.0] no upstream connections available to 127.0.0.1:19084
+[2026/11/07 21:54:28.395] [ warn] [engine] failed to flush chunk '172629-1794088456.395317223.flb', retry in 19 seconds: task_id=1, input=dummy.0 > output=http.0 (out_id=0)
+[2026/11/07 21:54:38.395] [error] [output:http:http.0] no upstream connections available to 127.0.0.1:19084
+[2026/11/07 21:54:38.395] [ warn] [engine] failed to flush chunk '172629-1794088455.395362619.flb', retry in 32 seconds: task_id=0, input=dummy.0 > output=http.0 (out_id=0)
+[2026/11/07 21:54:39] [engine] caught signal (SIGCONT)
+[2026/11/07 21:54:39] Fluent Bit Dump
+
+===== Input =====
+dummy.0 (dummy)
+│
+├─ status
+│  └─ overlimit     : no
+│     ├─ mem size   : 156b (156 bytes)
+│     └─ mem limit  : 0b (0 bytes)
+│
+├─ tasks
+│  ├─ total tasks   : 2
+│  ├─ new           : 0
+│  ├─ running       : 2
+│  └─ size          : 156b (156 bytes)
+│
+└─ chunks
+   └─ total chunks  : 2
+      ├─ up chunks  : 2
+      ├─ down chunks: 0
+      └─ busy chunks: 2
+         ├─ size    : 156b (156 bytes)
+         └─ size err: 0
+
+
+===== Storage Layer =====
+total chunks     : 2
+├─ mem chunks    : 2
+└─ fs chunks     : 0
+   ├─ up         : 0
+   └─ down       : 0
+[2026/11/07 21:54:39] [engine] caught signal (SIGTERM)
+[2026/11/07 21:54:39.659] [ warn] [engine] service will shutdown in max 5 seconds
+[2026/11/07 21:54:39.659] [ info] [engine] pausing all inputs..
+[2026/11/07 21:54:39.659] [ info] [input] pausing dummy.0
+[2026/11/07 21:54:39.659] [error] [output:http:http.0] no upstream connections available to 127.0.0.1:19084
+[2026/11/07 21:54:39.659] [error] [output:http:http.0] no upstream connections available to 127.0.0.1:19084
+[2026/11/07 21:54:39.660] [ warn] [engine] failed to flush chunk '172629-1794088456.395317223.flb', retry in 1 seconds: task_id=1, input=dummy.0 > output=http.0 (out_id=0)
+[2026/11/07 21:54:39.660] [error] [engine] chunk '172629-1794088455.395362619.flb' cannot be retried: task_id=0, input=dummy.0 > output=http.0
+[2026/11/07 21:54:40.395] [ info] [engine] pending chunk count: memory=1, filesystem=0; grace_timer=1
+[2026/11/07 21:54:40.395] [ info] [task] dummy/dummy.0 has 1 pending task(s):
+[2026/11/07 21:54:40.395] [ info] [task]   task_id=1 still running on route(s): http/http.0 
+[2026/11/07 21:54:40.399] [error] [output:http:http.0] no upstream connections available to 127.0.0.1:19084
+[2026/11/07 21:54:40.399] [error] [engine] chunk '172629-1794088456.395317223.flb' cannot be retried: task_id=1, input=dummy.0 > output=http.0
+[2026/11/07 21:54:41.395] [ info] [engine] service has stopped (0 pending tasks)
+[2026/11/07 21:54:41.395] [ info] [input] pausing dummy.0
+[2026/11/07 21:54:41.395] [ info] [output:http:http.0] thread worker #0 stopping...
+[2026/11/07 21:54:41.395] [ info] [output:http:http.0] thread worker #0 stopped
+[2026/11/07 21:54:41.395] [ info] [output:http:http.0] thread worker #1 stopping...
+[2026/11/07 21:54:41.395] [ info] [output:http:http.0] thread worker #1 stopped
